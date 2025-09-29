@@ -34,5 +34,21 @@ public class GameController : MonoBehaviour
         bokoblin1.Attack(player1);
         chuchu1.Attack(player2);
 
+        ClassAdditiveFunction p = new ClassAdditiveFunction();
+        p.Method1();
+        Child c = new Child();
+        c.Method1();
+        ClassAdditiveFunction pc = new Child();
+        pc.Method1();
+        Struct struct1;
+        struct1.x = 1;
+        Debug.Log($"struct1의 변수 값:{struct1.x}");
+        var a = (Name: "김유록", 2022136032);
+        Debug.Log($"{a.Name},{a.Item2}");
+        int j = ClassAdditiveFunction.Method3();
+        ClassAdditiveFunction.talk = "저는 정적변수입니다.쟤는 정적함수 반환값입니다";
+        Debug.Log($"{ClassAdditiveFunction.talk}, {j}");
+        string str = "string클래스 확장하기";
+        str.PrintData();
     }                                                
 }
