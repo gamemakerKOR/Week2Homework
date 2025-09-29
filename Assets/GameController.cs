@@ -50,5 +50,10 @@ public class GameController : MonoBehaviour
         Debug.Log($"{ClassAdditiveFunction.talk}, {j}");
         string str = "string클래스 확장하기";
         str.PrintData();
+        Property property=new Property();
+        property.HP = 100;
+        Debug.Log($"Player HP: {property.HP}");
+        property.HP = -100;
+        Debug.Log($"Player HP: {property.HP}");
     }                                                
 }
