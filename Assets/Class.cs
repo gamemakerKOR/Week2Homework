@@ -3,12 +3,14 @@ using UnityEngine;
 public class Player
 {
     public string ID;
-    private int currentHP;
+    protected int currentHP;
+    protected int damage;
 
-    public Player(string _ID = "?", int _currentHP = 0)
+    public Player(string _ID = "?", int _currentHP = 0,int damage=0)
     {
-        _ID = this.ID;
-        _currentHP = this.currentHP;
+        this.ID = _ID;
+        this.currentHP = _currentHP;
+        this.damage = damage;
     }
 
     public int show_HP()
@@ -16,12 +18,24 @@ public class Player
         return this.currentHP;
     }
 
+    public int Damaged(int damage)
+    {
+        this.currentHP -= damage;
+        return damage;
+    }
+
     public Player DeepCopy()
     {
         Player clone = new Player();
-        clone.ID = ID;
-        clone.currentHP = currentHP;
+        clone.ID = this.ID;
+        clone.currentHP = this.currentHP;
+        clone.damage = this.damage;
 
         return clone;
+    }
+
+    public void Hit(enemy enemy)
+    {
+        enemy.TakeDamage(this.damage);
     }
 }
